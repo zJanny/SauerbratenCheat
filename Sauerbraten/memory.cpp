@@ -3,7 +3,6 @@
 
 namespace offsets {
 	uintptr_t localPlayer = 0x2A3528;
-	uintptr_t health = 0x178;
 }
 
 namespace memory {
