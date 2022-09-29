@@ -1,13 +1,14 @@
 #include "includes.h"
 #include "cheat.h"
 #include "memory.h"
+#include "reversedClasses.h"
 
 namespace cheat {
 	void mainLoop();
 	void openConsole();
 	void getInstances();
 
-	LocalPlayer* localPlayer;
+	Entity* localPlayer;
 
 	void initCheat() {
 		openConsole();
@@ -21,7 +22,12 @@ namespace cheat {
 
 	void mainLoop() {
 		while (true) {
-
+			std::cout << "Player count: " << memory::getPlayerCount() << std::endl;
+			EntityList* entityList = memory::getEntityList();
+			for (int i = 0; i < memory::getPlayerCount(); i++) {
+				std::cout << "Player: " << i << " Health: " << entityList->entities[i]->health << std::endl;
+			}
+			Sleep(500);
 		}
 	}
 

@@ -1,5 +1,8 @@
 #pragma once
 
 namespace memory {
-	extern LocalPlayer* getLocalPlayer();
+	extern Entity* getLocalPlayer();
+	extern int getPlayerCount();
+	extern Entity* getEntityByID(int id);
+	extern EntityList* getEntityList();
 }

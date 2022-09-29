@@ -3,6 +3,8 @@
 
 namespace offsets {
 	uintptr_t localPlayer = 0x2A3528;
+	uintptr_t entityList = 0x346C90;
+	uintptr_t playerCount = 0xC;
 }
 
 namespace memory {
@@ -21,8 +23,22 @@ namespace memory {
 		return addr;
 	}
 
-	LocalPlayer* getLocalPlayer() {
-		return *(LocalPlayer**)(getBaseAddress() + offsets::localPlayer);
+	Entity* getLocalPlayer() {
+		return *(Entity**)(getBaseAddress() + offsets::localPlayer);
+	}
+
+	Entity* getEntityByID(int id) {
+		EntityList* list = *(EntityList**)(getPointerAddr(getBaseAddress() + offsets::entityList, {}));
+
+		return list->entities[id];
+	}
+
+	EntityList* getEntityList() {
+		return *(EntityList**)(getPointerAddr(getBaseAddress() + offsets::entityList, {}));
+	}
+
+	int getPlayerCount() {
+		return *(int*)(getBaseAddress() + offsets::entityList + offsets::playerCount);
 	}
 	
 }

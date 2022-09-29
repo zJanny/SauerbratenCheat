@@ -145,9 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cheat.h" />
-    <ClInclude Include="localPlayer.h" />
     <ClInclude Include="memory.h" />
     <ClInclude Include="includes.h" />
+    <ClInclude Include="reversedClasses.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

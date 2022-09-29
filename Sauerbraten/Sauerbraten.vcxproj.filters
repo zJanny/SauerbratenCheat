@@ -38,7 +38,7 @@
     <ClInclude Include="includes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="localPlayer.h">
+    <ClInclude Include="reversedClasses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
