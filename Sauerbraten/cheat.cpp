@@ -24,7 +24,9 @@ namespace cheat {
 
 	void mainLoop() {
 		while (true) {
-			aimbot->doAimbot();
+			if (GetAsyncKeyState(VK_RBUTTON)) {
+				aimbot->doAimbot();
+			}
 		}
 	}
 

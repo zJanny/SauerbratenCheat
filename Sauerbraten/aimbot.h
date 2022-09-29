@@ -11,4 +11,5 @@ private:
 	float getDistance3D(Vector3 src, Vector3 dst);
 	Vector2 getAngle(Vector3 src, Vector3 dst);
 	Vector3 subtractVector(Vector3 one, Vector3 two);
+	bool checkTeam(Entity entOne, Entity entTwo);
 };

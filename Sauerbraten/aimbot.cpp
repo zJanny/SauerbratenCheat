@@ -26,11 +26,10 @@ Vector2 Aimbot::getAngle(Vector3 src, Vector3 dst) {
 Entity* Aimbot::getTarget() {
 	Entity* target = nullptr;
 	float lastDistance = 9999999999999999999999.0f;
-
 	for (int i = 1; i < memory::getPlayerCount(); i++) {
 		Entity* ent = memory::getEntityByID(i);
 
-		if (localPlayer->team == ent->team || !ent->alive) {
+		if (localPlayer->team[0] == ent->team[0] || !ent->alive) {
 			continue;
 		}
 		float dist = getDistance3D(localPlayer->location, ent->location);
@@ -44,7 +43,10 @@ Entity* Aimbot::getTarget() {
 }
 
 void Aimbot::doAimbot() {
+	if (memory::getPlayerCount() < 2 || !localPlayer->alive) return;
 	Entity* target = getTarget();
-	localPlayer->viewAngle = getAngle(localPlayer->location, target->location);
+	if (target != nullptr) {
+		localPlayer->viewAngle = getAngle(localPlayer->location, target->location);
+	}
 
 }
