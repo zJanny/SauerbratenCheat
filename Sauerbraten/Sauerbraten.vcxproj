@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="aimbot.cpp" />
     <ClCompile Include="cheat.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="memory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aimbot.h" />
     <ClInclude Include="cheat.h" />
     <ClInclude Include="memory.h" />
     <ClInclude Include="includes.h" />

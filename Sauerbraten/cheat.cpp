@@ -1,7 +1,7 @@
 #include "includes.h"
 #include "cheat.h"
 #include "memory.h"
-#include "reversedClasses.h"
+#include "aimbot.h"
 
 namespace cheat {
 	void mainLoop();
@@ -9,6 +9,7 @@ namespace cheat {
 	void getInstances();
 
 	Entity* localPlayer;
+	Aimbot* aimbot;
 
 	void initCheat() {
 		openConsole();
@@ -18,16 +19,12 @@ namespace cheat {
 
 	void getInstances() {
 		localPlayer = memory::getLocalPlayer();
+		aimbot = new Aimbot(localPlayer);
 	}
 
 	void mainLoop() {
 		while (true) {
-			std::cout << "Player count: " << memory::getPlayerCount() << std::endl;
-			EntityList* entityList = memory::getEntityList();
-			for (int i = 0; i < memory::getPlayerCount(); i++) {
-				std::cout << "Player: " << i << " Health: " << entityList->entities[i]->health << std::endl;
-			}
-			Sleep(500);
+			aimbot->doAimbot();
 		}
 	}
 

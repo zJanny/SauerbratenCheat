@@ -16,6 +16,9 @@
     <Filter Include="Source Files\cheat">
       <UniqueIdentifier>{2d777cc3-8c09-4f33-85bf-ed74baa1cbb6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\cheat\aimbot">
+      <UniqueIdentifier>{18779bbd-bf60-4c54-b603-2fd5961e41a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -26,6 +29,9 @@
     </ClCompile>
     <ClCompile Include="memory.cpp">
       <Filter>Source Files\cheat</Filter>
+    </ClCompile>
+    <ClCompile Include="aimbot.cpp">
+      <Filter>Source Files\cheat\aimbot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="reversedClasses.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aimbot.h">
+      <Filter>Source Files\cheat\aimbot</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
